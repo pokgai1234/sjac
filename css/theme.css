@@ -1,0 +1,211 @@
+body {
+    font-family: "Open Sans", sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-size: cover;
+    background-attachment: fixed;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+
+}
+
+.content {
+    color: #5b5b5b;
+    font-family: "Open Sans", sans-serif;
+    min-height: 400px;
+    max-width: 80vw;
+    background: white;
+    border-radius: 5px;
+    text-align: center;
+    padding: 40px;
+}
+
+.content-header {
+    max-width:415px;
+    margin:auto;
+}
+
+.passwordreset {
+    width: 680px;
+}
+
+.login {
+    width:420px;
+}
+
+.logo {
+    max-width:400px;
+}
+
+input[type=text], input[type=password], input[type=submit], select {
+    display: block;
+    padding: 12px 3%;
+    box-sizing: border-box;
+}
+
+.checkbox {
+    text-align:left;
+    margin: 20px 0px;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    margin: 20px 0px;
+    width: 100%;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    background: #e0e0e0;
+    border: none;
+    color: #5b5b5b;
+}
+
+.submit {
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    display:-webkit-flex;
+    display:flex;
+}
+
+div.forgot,
+.submit input,
+.submit button {
+    display: inline-block;
+    flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+}
+div.forgot > a.forgot {
+    display: block;
+}
+
+input[type="submit"], .submit > button {
+    background: #5598fe;
+    color: #ECECEC;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    text-align: center;
+    padding: 12px 3%;
+    box-sizing: content-box;
+}
+
+.main {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    -webkit-align-items: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    flex: 1 0 auto;
+    -webkit-flex: 1 0 auto;
+}
+
+.footer {
+    text-align: center;
+    font-size: 10px;
+    color: #3b3b3b;
+    padding: 4px;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+}
+
+.footer a {
+    color: #2b2b2b;
+}
+
+.error {
+    display: inline-block;
+    border: 1px solid #ebccd1;
+    background: #f2dede;
+    color: #993432;
+    padding:3%;
+    width:100%;
+    box-sizing:border-box;
+    border-radius:3px;
+}
+
+
+.btn, .btnaddonright {
+    color: #000000;
+    border: 1px solid #eee;
+    border-radius: 3px;
+    background-color: #eee;
+    background-image: linear-gradient(#fcfcfc, #eee);
+    text-align: center;
+    padding: 5px;
+    cursor: hand;
+}
+
+.btn:hover, .btnaddonright:hover {
+    border-color: #ccc;
+    background-color: #ddd;
+    background-image: linear-gradient(#eee, #ddd);
+
+}
+
+.btn img,
+.btnaddonright img {
+    max-height: 15px;
+    max-width: 15px;
+}
+
+meter {
+    margin: 0 auto 1em;
+    width: 100%;
+    height: 0.5em;
+
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }/* Webkit based browsers */
+
+
+@media (max-device-width:480px) {
+    html { height: 100% }
+    body { height: 100%; background: white; display: default; }
+    .content{
+        width: 90vw;
+        padding:25px 10px 0px 10px;
+        margin:0px auto;
+        border-radius: 0px;
+    }
+    .login, .passwordreset {
+        width: 100%;
+    }
+}
+
+@media (max-device-height: 480px) {
+    html { height: 100% }
+    body { height: 100%; background: white; display: default; }
+    .content {
+        width: 90vw;
+        margin:0px auto;
+        border-radius: 0px;
+        border-radius: 0px;
+    }
+    .login, .passwordreset {
+        width: 100%;
+    }
+}

